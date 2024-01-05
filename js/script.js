@@ -184,7 +184,7 @@ function animation() {
   topLayer.body.position[topLayer.direction] += boxspeed;
 
   //10 is refering to the height of the camera
-  if (camera.position.y < boxHeight * (stack.length - 2) + 10) {
+  if (camera.position.y < boxHeight * (stack.length - 2) + 12) {
     camera.position.y += camspeed;
   }
   physicsupdate();
@@ -226,6 +226,11 @@ const init = () => {
   scene = new THREE.Scene();
   scene.background = new THREE.Color(0x00005);
   layerbox(0, 0, ogboxsize, ogboxsize);
+  layerbox(0, 0, ogboxsize, ogboxsize);
+  layerbox(0, 0, ogboxsize, ogboxsize);
+  layerbox(0, 0, ogboxsize, ogboxsize);
+  layerbox(0, 0, ogboxsize, ogboxsize);
+
   layerbox(-10, 0, ogboxsize, ogboxsize, "x");
   Array(2300).fill().forEach(nightStar);
 
