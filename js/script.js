@@ -196,9 +196,10 @@ function nightStar() {
   const geometry = new THREE.SphereGeometry(0.02, 24, 24);
   const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
   const star = new THREE.Mesh(geometry, material);
-  const [x, y, z] = Array(3)
+  const [x, y] = Array(2)
     .fill()
     .map(() => THREE.MathUtils.randFloatSpread(100));
+  const z = THREE.MathUtils.randFloat(-10, -50);
   star.position.set(x, y, z);
   scene.add(star);
 }
