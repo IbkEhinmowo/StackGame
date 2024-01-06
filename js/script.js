@@ -205,18 +205,6 @@ function nightStar() {
   scene.add(star);
 }
 
-function onWindowResize() {
-  // for the window resizing
-  sizes.width = window.innerWidth;
-  sizes.height = window.innerHeight;
-
-  camera.aspect = sizes.width / sizes.height;
-  camera.updateProjectionMatrix(); //i think this is what makes it work (saw it on youtubr)
-
-  renderer.setSize(sizes.width, sizes.height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Add this line
-}
-
 const init = () => {
   // for the scene that roughly stays the same
   world = new CANNON.World();
@@ -268,11 +256,30 @@ const init = () => {
   Math.floor(Math.random() * 360);
   renderer.setSize(sizes.width, sizes.height);
   renderer.render(scene, camera);
-
-  window.addEventListener("resize", onWindowResize);
 };
+window.addEventListener("resize", () => {
+  // for the window resizing
+  sizes.width = window.innerWidth;
+  sizes.height = window.innerHeight;
 
+  // Update the camera's aspect ratio
+  camera.aspect = sizes.width / sizes.height;
+  camera.updateProjectionMatrix();
+
+  const width = 11;
+
+  //update Orthographic Camera aspect
+  const height = width * (sizes.height / sizes.width);
+  camera.left = -width / 2;
+  camera.right = width / 2;
+  camera.top = height / 2;
+  camera.bottom = -height / 2;
+  camera.updateProjectionMatrix();
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(sizes.width, sizes.height);
+});
 // Add click event listener
+
 window.addEventListener("click", startGame);
 window.addEventListener("touchstart", startGame);
 
