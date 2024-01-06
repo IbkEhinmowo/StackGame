@@ -1,7 +1,8 @@
 import * as THREE from "three";
 import * as CANNON from "cannon-es";
 let camera, scene, renderer;
-const ogboxsize = 3.5; // height width
+const ogboxsize = 3.5;
+const bottomboxes = 7; // height width
 let stack = [];
 let over = [];
 const boxHeight = 1;
@@ -225,10 +226,10 @@ const init = () => {
 
   scene = new THREE.Scene();
   scene.background = new THREE.Color(0x00005);
-  layerbox(0, 0, ogboxsize, ogboxsize);
-  layerbox(0, 0, ogboxsize, ogboxsize);
-  layerbox(0, 0, ogboxsize, ogboxsize);
-  layerbox(0, 0, ogboxsize, ogboxsize);
+  layerbox(0, 0, bottomboxes, bottomboxes);
+  layerbox(0, 0, bottomboxes, bottomboxes);
+  layerbox(0, 0, bottomboxes, bottomboxes);
+  layerbox(0, 0, bottomboxes, bottomboxes);
   layerbox(0, 0, ogboxsize, ogboxsize);
 
   layerbox(-10, 0, ogboxsize, ogboxsize, "x");
