@@ -18,7 +18,7 @@ function generateBox(x, y, z, width, depth, falls) {
   // box mesh
   const geometry = new THREE.BoxGeometry(width, boxHeight, depth);
   const color = new THREE.Color(
-    `hsl(${(initialhue + stack.length * 5) % 360}, 100%, 50%)`,
+    `hsl(${(initialhue + stack.length * 6) % 360}, 100%, 50%)`,
   );
   const material = new THREE.MeshLambertMaterial({ color });
   const mesh = new THREE.Mesh(geometry, material);
@@ -233,7 +233,7 @@ const init = () => {
   const gridHelper = new THREE.GridHelper(200, 50);
   scene.add(light);
 
-  const width = 11; //camera placement
+  const width = 14; //camera placement
   const height = width * (sizes.height / sizes.width);
   camera = new THREE.OrthographicCamera(
     width / -2, //left frustum
