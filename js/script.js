@@ -18,7 +18,7 @@ function generateBox(x, y, z, width, depth, falls) {
   // box mesh
   const geometry = new THREE.BoxGeometry(width, boxHeight, depth);
   const color = new THREE.Color(
-    `hsl(${(initialhue + stack.length * 4) % 360}, 100%, 50%)`,
+    `hsl(${(initialhue + stack.length * 5) % 360}, 100%, 50%)`,
   );
   const material = new THREE.MeshLambertMaterial({ color });
   const mesh = new THREE.Mesh(geometry, material);
