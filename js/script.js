@@ -152,28 +152,6 @@ function physicsupdate() {
   });
 }
 
-// function cutbox(topLayer, overlap, sidesize, overhang) {
-//   const direction = topLayer.direction;
-//   const newwidth = direction === "x" ? overlap : topLayer.width;
-//   const newdepth = direction === "z" ? overlap : topLayer.depth;
-
-//   topLayer.width = newwidth;
-//   topLayer.depth = newdepth;
-
-//   topLayer.mesh.scale[direction] = overlap / sidesize;
-//   topLayer.mesh.position[direction] -= overhang / 2;
-
-//   const body = topLayer.body;
-//   body.position[direction] -= overhang / 2;
-
-//   // Update or recreate shape in Cannon.js for the body
-//   const shape = new CANNON.Box(
-//     new CANNON.Vec3(newwidth / 2, boxHeight / 2, newdepth / 2)
-//   );
-//   body.shapes = []; // Remove previous shape(s)
-//   body.addShape(shape); // Add new adjusted shape
-// }
-
 let time = 0;
 function animation() {
   // for the camera and movement stuff
