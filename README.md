@@ -1,6 +1,6 @@
 # Project Name
 
-Description of your project.
+Welcome to Stack Master 3D, a fun and interactive 3D box stacking game built with Three.js.
 
 ## Live Site & Code Review
 
