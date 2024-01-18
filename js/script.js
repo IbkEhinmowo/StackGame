@@ -18,7 +18,7 @@ function generateBox(x, y, z, width, depth, falls) {
   // box mesh
   const geometry = new THREE.BoxGeometry(width, boxHeight, depth);
   const color = new THREE.Color(
-    `hsl(${(initialhue + stack.length * 6) % 360}, 100%, 50%)`,
+    `hsl(${(initialhue + stack.length * 8) % 360}, 100%, 50%)`,
   );
   const material = new THREE.MeshLambertMaterial({ color });
   const mesh = new THREE.Mesh(geometry, material);
@@ -134,7 +134,12 @@ function endGame() {
   });
   stack = [];
   over = [];
+  layerbox(0, 0, bottomboxes, bottomboxes);
+  layerbox(0, 0, bottomboxes, bottomboxes);
+  layerbox(0, 0, bottomboxes, bottomboxes);
+  layerbox(0, 0, bottomboxes, bottomboxes);
   layerbox(0, 0, ogboxsize, ogboxsize);
+
   layerbox(-10, 0, ogboxsize, ogboxsize, "x");
 }
 
