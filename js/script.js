@@ -238,6 +238,7 @@ const init = () => {
   });
   Math.floor(Math.random() * 360);
   renderer.setSize(sizes.width, sizes.height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.render(scene, camera);
 };
 window.addEventListener("resize", () => {
@@ -249,7 +250,7 @@ window.addEventListener("resize", () => {
   camera.aspect = sizes.width / sizes.height;
   camera.updateProjectionMatrix();
 
-  const width = 11;
+  const width = 12;
 
   //update Orthographic Camera aspect
   const height = width * (sizes.height / sizes.width);
