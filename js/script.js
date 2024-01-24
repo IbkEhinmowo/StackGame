@@ -77,8 +77,6 @@ function startGame() {
     let newwidth, newdepth;
     if (overlap <= 0) {
       endGame();
-      console.log("Game over!");
-
       return;
     }
 
@@ -273,8 +271,22 @@ window.addEventListener("resize", () => {
 });
 // Add click event listener
 
-window.addEventListener("click", startGame);
-window.addEventListener("touchstart", startGame);
+//handling ui logic
+
+window.addEventListener("click", handleUserInteraction);
+window.addEventListener("touchstart", handleUserInteraction);
+
+function handleUserInteraction() {
+  startGame();
+  const introElement = document.querySelector(".intro");
+  if (introElement) {
+    introElement.remove();
+  }
+}
+
+const startButton = document.getElementById("startgame");
+startButton.addEventListener("click", handleUserInteraction);
+startButton.addEventListener("touchstart", handleUserInteraction);
 
 // Initialize the scene
 init();
