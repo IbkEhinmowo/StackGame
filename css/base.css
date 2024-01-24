@@ -28,3 +28,10 @@ body {
   height: 100vh;
   background: #000;
 }
+#p1{
+  font-family: sans-serif;
+  color: white;
+  position: absolute;
+  top: 0%;
+  left: 90%;
+}
