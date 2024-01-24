@@ -8,6 +8,7 @@ let over = [];
 const boxHeight = 1;
 let world;
 let initialhue = Math.floor(Math.random() * 360);
+let score = 0;
 
 const sizes = {
   width: window.innerWidth,
@@ -42,6 +43,7 @@ function generateBox(x, y, z, width, depth, falls) {
   };
 }
 
+// Add a new box function called in the animation loop and initialize function
 function layerbox(x, z, width, depth, direction) {
   const y = boxHeight * stack.length; // Add the new box one layer higher
   const layer = generateBox(x, y, z, width, depth, true);
@@ -53,6 +55,8 @@ var gamerunning = false;
 
 function startGame() {
   if (!gamerunning) {
+    score = 0;
+    document.getElementById("p1").innerHTML = score;
     gamerunning = true;
     renderer.setAnimationLoop(animation);
     camera.position.set(10, 10, 10);
@@ -77,6 +81,9 @@ function startGame() {
     }
 
     if (overlap > 0) {
+      score += 1;
+      document.getElementById("p1").innerHTML = score;
+      console.log(score);
       // cutbox(topLayer, overlap, sidesize, overhang);
 
       //cut new layer depending on overlap size
@@ -119,7 +126,6 @@ function endGame() {
   gamerunning = false;
   console.log("game over");
   renderer.setAnimationLoop(null);
-
   // Remove all bodies from the physics world
   while (world.bodies.length > 0) {
     world.removeBody(world.bodies[0]);
@@ -141,6 +147,7 @@ function endGame() {
   layerbox(0, 0, ogboxsize, ogboxsize);
 
   layerbox(-10, 0, ogboxsize, ogboxsize, "x");
+  score = 0;
 }
 
 const addoverhang = (x, z, width, depth) => {
@@ -264,8 +271,22 @@ window.addEventListener("resize", () => {
 });
 // Add click event listener
 
-window.addEventListener("click", startGame);
-window.addEventListener("touchstart", startGame);
+//handling ui logic
+
+window.addEventListener("click", handleUserInteraction);
+window.addEventListener("touchstart", handleUserInteraction);
+
+function handleUserInteraction() {
+  startGame();
+  const introElement = document.querySelector(".intro");
+  if (introElement) {
+    introElement.remove();
+  }
+}
+
+const startButton = document.getElementById("startgame");
+startButton.addEventListener("click", handleUserInteraction);
+startButton.addEventListener("touchstart", handleUserInteraction);
 
 // Initialize the scene
 init();
