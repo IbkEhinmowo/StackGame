@@ -64,9 +64,14 @@ body {
     color: gray;
     font-size: 20px;
     cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
 
   }
   button:active{
     transform: scale(1.2);
+  }
+  button:hover{
+    opacity: 1;
   }
 }

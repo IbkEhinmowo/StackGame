@@ -277,6 +277,7 @@ window.addEventListener("click", handleUserInteraction);
 window.addEventListener("touchstart", handleUserInteraction);
 
 function handleUserInteraction() {
+  console.log("handleUserInteraction called");
   startGame();
   const introElement = document.querySelector(".intro");
   if (introElement) {
