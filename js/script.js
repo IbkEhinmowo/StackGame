@@ -10,6 +10,11 @@ let world;
 let initialhue = Math.floor(Math.random() * 360);
 let score = 0;
 
+const outroElement = document.querySelector(".outro");
+if (outroElement) {
+  outroElement.remove();
+}
+
 const sizes = {
   width: window.innerWidth,
   height: window.innerHeight,
@@ -75,8 +80,9 @@ function startGame() {
     const overlap = sidesize - overhangsize; // how much the box is overlapping
 
     let newwidth, newdepth;
-    if (overlap <= 0) {
+    if (score > 0 && overlap <= 0) {
       endGame();
+
       return;
     }
 
@@ -122,9 +128,14 @@ function startGame() {
   }
 }
 function endGame() {
+  console.log("game over");
+
+  document.body.appendChild(outroElement);
+  document.getElementById("gameoverscore").innerHTML = "Your Score: " + score;
+
+  // add outro (game over Element)// add outro (game over Element)
   // for the game over
   gamerunning = false;
-  console.log("game over");
   renderer.setAnimationLoop(null);
   // Remove all bodies from the physics world
   while (world.bodies.length > 0) {
@@ -277,12 +288,15 @@ window.addEventListener("click", handleUserInteraction);
 window.addEventListener("touchstart", handleUserInteraction);
 
 function handleUserInteraction() {
-  console.log("handleUserInteraction called");
-  startGame();
   const introElement = document.querySelector(".intro");
   if (introElement) {
+    startGame();
     introElement.remove();
   }
+  if (outroElement) {
+    outroElement.remove();
+  }
+  startGame();
 }
 
 const startButton = document.getElementById("startgame");
