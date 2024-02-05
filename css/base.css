@@ -33,7 +33,7 @@ body {
   color: white;
   position: absolute;
   top: 0%;
-  left: 90%;
+  left: 85%;
 }
 .intro, .outro{
   display: flex;
@@ -53,6 +53,7 @@ body {
   h1{
     color: white;
     font-family: "Press Start 2P";
+    
   }
   button{
     width: 200px;
@@ -74,4 +75,12 @@ body {
   button:hover{
     opacity: 1;
   }
+}
+@media only screen and (max-width: 767px) {
+  .intro, .outro{
+h1{
+  font-size: 26px;
+}
+  }
+
 }
