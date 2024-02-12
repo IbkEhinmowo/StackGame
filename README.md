@@ -34,10 +34,6 @@ A challenging and addictive physics-based stack-building game crafted with pure 
 - **Three.js:** Rendering and 3D environment.
 - **Cannon.js:** Physics engine.
 
-## Demo
-
-![Include a GIF or short video demonstration of the game if possible]
-
 ## Future Development
 
 - better Mobile optimization
