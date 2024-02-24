@@ -2,6 +2,7 @@
 
 Welcome to Stack Master 3D, a fun and interactive 3D box stacking game built with Three.js.
 A challenging and addictive physics-based stack-building game crafted with pure vanilla JavaScript and the Cannon.js physics engine. Test your precision and timing as you carefully stack blocks, vying for the highest tower possible!
+
 ![Screenshot 2024-02-11 at 6 18 51 PM](https://github.com/IbkEhinmowo/StackGame/assets/142057631/a51898cb-a185-4e00-ac38-7483d1585587)
 
 
