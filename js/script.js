@@ -234,7 +234,7 @@ const init = () => {
   const gridHelper = new THREE.GridHelper(200, 50);
   scene.add(light);
 
-  const width = 14; //camera placement
+  const width = 18; //camera placement
   const height = width * (sizes.height / sizes.width);
   camera = new THREE.OrthographicCamera(
     width / -2, //left frustum
@@ -268,7 +268,7 @@ window.addEventListener("resize", () => {
   camera.aspect = sizes.width / sizes.height;
   camera.updateProjectionMatrix();
 
-  const width = 12;
+  const width = 17;
 
   //update Orthographic Camera aspect
   const height = width * (sizes.height / sizes.width);
