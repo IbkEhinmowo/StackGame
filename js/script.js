@@ -1,5 +1,5 @@
-import * as THREE from "three";
-import * as CANNON from "cannon-es";
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.module.js";
+import * as CANNON from "https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/+esm";
 let camera, scene, renderer;
 const ogboxsize = 3.5;
 const bottomboxes = 7; // height width
