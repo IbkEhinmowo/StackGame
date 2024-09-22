@@ -24,7 +24,7 @@ function generateBox(x, y, z, width, depth, falls) {
   // box mesh
   const geometry = new THREE.BoxGeometry(width, boxHeight, depth);
   const color = new THREE.Color(
-    `hsl(${(initialhue + stack.length * 8) % 360}, 100%, 50%)`,
+    `hsl(${(initialhue + stack.length * 8) % 360}, 100%, 50%)`
   );
   const material = new THREE.MeshLambertMaterial({ color });
   const mesh = new THREE.Mesh(geometry, material);
@@ -33,7 +33,7 @@ function generateBox(x, y, z, width, depth, falls) {
 
   //add mass physics
   const shape = new CANNON.Box(
-    new CANNON.Vec3(width / 2, boxHeight / 2, depth / 2),
+    new CANNON.Vec3(width / 2, boxHeight / 2, depth / 2)
   );
   let mass = falls ? 5 : 0;
   const body = new CANNON.Body({ mass, shape });
@@ -179,7 +179,7 @@ let time = 0;
 function animation() {
   // for the camera and movement stuff
   const camspeed = 0.15;
-  const boxspeed = 0.02;
+  const boxspeed = 0.035;
   const topLayer = stack[stack.length - 1];
   time += boxspeed; // Increment time
   topLayer.mesh.position[topLayer.direction] = Math.sin(time) * 5; // Use sine function for back and forth movement
@@ -242,7 +242,7 @@ const init = () => {
     height / 2, //  top frustum
     height / -2, // bottom frustum
     1, //near frustum
-    1000, //far frustum
+    1000 //far frustum
   );
 
   camera.position.set(10, 10, 10);
