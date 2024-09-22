@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title></title>
-		<meta name="description" content="Stack Game" />
-		<meta name="keywords" content="3d game, three.js, stack game, interactive, website, web development" />
-		<meta name="author" content="Codrops" />
-		<!-- <link rel="shortcut icon" href="favicon.ico"> -->
-		<link rel="stylesheet" type="text/css" href="css/base.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=NTR&family=Press+Start+2P&display=swap" rel="stylesheet">
-	</head>
-	<body>
-		<h1 id='p1'>0</h1>
-		<div class='outro'>
-			<h1 > You Missed the Stack!!</h1>
-			<h1 id='gameoverscore'>Your Score: </h1>
-			<button id='startgame'>Play again</button>
-		</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <meta name="description" content="Stack Game" />
+    <meta
+      name="keywords"
+      content="3d game, three.js, stack game, interactive, website, web development"
+    />
+    <meta name="author" content="Codrops" />
+    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=NTR&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 id="p1">0</h1>
+    <div class="outro">
+      <h1>You Missed the Stack!!</h1>
+      <h1 id="gameoverscore">Your Score:</h1>
+      <button id="startgame">Play again</button>
+    </div>
 
-		<div class='intro'>
-			<h1>StackMaster 3D</h1>
-			<button id='startgame'>StartGame</button>
-		</div>
+    <div class="intro">
+      <h1>StackMaster 3D</h1>
+      <button id="startgame">StartGame</button>
+    </div>
 
-		
-
-		<canvas class="webgl"></canvas>
-		<script type="module"> src='https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/+esm'</script>
-		<!-- The main Three.js file -->
-		<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js'></script>
-		<!-- This brings in the ability to load custom 3D objects in the .gltf file format. Blender allows the ability to export to this format out the box -->
-		<script src='https://cdn.jsdelivr.net/gh/mrdoob/Three.js@r92/examples/js/loaders/GLTFLoader.js'></script>
-		<!-- partial -->
-		<script  src="js/script.js"></script>
-
-		
-	</body>
+    <canvas class="webgl"></canvas>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/+esm"
+    ></script>
+    <!-- The main Three.js file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"></script>
+    <!-- This brings in the ability to load custom 3D objects in the .gltf file format. Blender allows the ability to export to this format out the box -->
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/Three.js@r92/examples/js/loaders/GLTFLoader.js"></script>
+    <!-- partial -->
+    <script src="js/script.js"></script>
+  </body>
 </html>
