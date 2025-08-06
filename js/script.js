@@ -1,3 +1,5 @@
+/** @format */
+
 import * as THREE from "three";
 import * as CANNON from "cannon-es";
 let camera, scene, renderer;
@@ -182,7 +184,7 @@ function animation() {
   const boxspeed = 0.025;
   const topLayer = stack[stack.length - 1];
   time += boxspeed; // Increment time
-  topLayer.mesh.position[topLayer.direction] = Math.sin(time) * 5; // Use sine function for back and forth movement
+  topLayer.mesh.position[topLayer.direction] = Math.sin(time) * 7; // Use sine function for back and forth movement
   topLayer.body.position[topLayer.direction] += boxspeed;
 
   //10 is refering to the height of the camera

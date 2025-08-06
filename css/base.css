@@ -1,21 +1,21 @@
 /* Arcade-style animations for intro/outro screens */
 .arcade-fade-in {
-  animation: arcadeFadeIn 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+  animation: arcadeFadeIn 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) both;
 }
 
 .arcade-flash {
-  animation: arcadeFlash 0.8s linear infinite alternate;
+  animation: arcadeFlash 1s linear infinite alternate;
 }
 
 @keyframes arcadeFadeIn {
   0% {
     opacity: 0;
-    transform: scale(0.7) rotate(-8deg);
-    filter: blur(8px);
+    transform: scale(0.9) rotate(-2deg);
+    filter: blur(4px);
   }
   60% {
     opacity: 1;
-    transform: scale(1.05) rotate(2deg);
+    transform: scale(1.02) rotate(1deg);
     filter: blur(0px);
   }
   100% {
@@ -27,11 +27,11 @@
 
 @keyframes arcadeFlash {
   0% {
-    text-shadow: 0 0 8px #fff, 0 0 16px #ff0, 0 0 32px #f0f;
+    text-shadow: 0 0 4px #fff, 0 0 8px #ff0;
     color: #fff;
   }
   100% {
-    text-shadow: 0 0 24px #0ff, 0 0 32px #0f0, 0 0 48px #00f;
+    text-shadow: 0 0 8px #0ff, 0 0 16px #0f0;
     color: #ff0;
   }
 }
@@ -88,7 +88,7 @@ body {
   border-radius: 0;
   background: black;
   z-index: 1000;
-  animation: arcadeFadeIn 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+  animation: arcadeFadeIn 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) both;
 }
 
 .intro h1,
