@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import * as CANNON from "cannon-es";
 let camera, scene, renderer;
-const ogboxsize = 3.5;
+const ogboxsize = 6.5;
 const bottomboxes = 7; // height width
 let stack = [];
 let over = [];
@@ -179,7 +179,7 @@ let time = 0;
 function animation() {
   // for the camera and movement stuff
   const camspeed = 0.15;
-  const boxspeed = 0.035;
+  const boxspeed = 0.025;
   const topLayer = stack[stack.length - 1];
   time += boxspeed; // Increment time
   topLayer.mesh.position[topLayer.direction] = Math.sin(time) * 5; // Use sine function for back and forth movement

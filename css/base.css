@@ -1,3 +1,40 @@
+/* Arcade-style animations for intro/outro screens */
+.arcade-fade-in {
+  animation: arcadeFadeIn 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+}
+
+.arcade-flash {
+  animation: arcadeFlash 0.8s linear infinite alternate;
+}
+
+@keyframes arcadeFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) rotate(-8deg);
+    filter: blur(8px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05) rotate(2deg);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: blur(0px);
+  }
+}
+
+@keyframes arcadeFlash {
+  0% {
+    text-shadow: 0 0 8px #fff, 0 0 16px #ff0, 0 0 32px #f0f;
+    color: #fff;
+  }
+  100% {
+    text-shadow: 0 0 24px #0ff, 0 0 32px #0f0, 0 0 48px #00f;
+    color: #ff0;
+  }
+}
 body,
 html {
   margin: 0;
@@ -35,51 +72,59 @@ body {
   top: 0%;
   left: 85%;
 }
-.intro, .outro{
+/* Flattened selectors for plain CSS and arcade animation */
+.intro, .outro {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   border-radius: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
   background: black;
-  h1{
-    color: white;
-    font-family: "Press Start 2P";
+  z-index: 1000;
+  animation: arcadeFadeIn 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+}
 
-  button{
-    width: 200px;
-    font-family: "Press Start 2P";
-    height: 50px;
-    border-radius: 10px;
-    border: none;
-    background: lightgrey;
-    color: gray;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0.6;
-    transition: 0.3s;
+.intro h1,
+.outro h1 {
+  color: white;
+  font-family: "Press Start 2P";
+  animation: arcadeFlash 0.8s linear infinite alternate;
+}
 
-  }
-  button:active{
-    transform: scale(1.2);
-  }
-  button:hover{
-    opacity: 1;
-  }
+.intro button,
+.outro button {
+  width: 200px;
+  font-family: "Press Start 2P";
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background: lightgrey;
+  color: gray;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.intro button:active,
+.outro button:active {
+  transform: scale(1.2);
+}
+
+.intro button:hover,
+.outro button:hover {
+  opacity: 1;
 }
 @media only screen and (max-width: 767px) {
-  .intro, .outro{
-h1{
-  font-size: 26px;
-}
+  .intro h1,
+  .outro h1 {
+    font-size: 26px;
   }
-
 }
