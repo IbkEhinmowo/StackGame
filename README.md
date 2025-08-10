@@ -1,8 +1,8 @@
 <!-- @format -->
 
-# Stack Master 3D
+# Opal - Stack Game
 
-Stack Master 3D is a fun, physics-based 3D box stacking game built with Three.js and Cannon.js. Test your timing and precision as you stack blocks to build the tallest tower you can!
+Opal is a fun, physics-based 3D box stacking game built with Three.js and Cannon.js. Test your timing and precision as you stack blocks to build the tallest tower you can!
 
 ![Screenshot 2024-02-11 at 6 18 51 PM](https://github.com/IbkEhinmowo/StackGame/assets/142057631/a51898cb-a185-4e00-ac38-7483d1585587)
 
